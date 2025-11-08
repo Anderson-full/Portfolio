@@ -9,15 +9,18 @@ import {
   FaNodeJs, 
   FaFigma 
 } from 'react-icons/fa';
-import { SiC } from 'react-icons/si'; 
+import { SiC, SiVite, SiTypescript } from 'react-icons/si'; 
+
 
 const frontendSkills = [
   { name: 'HTML5', icon: FaHtml5, color: '#E34F26' },
   { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6' },
   { name: 'JavaScript', icon: FaJsSquare, color: '#F7DF1E' },
+  { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
   { name: 'React', icon: FaReact, color: '#61DAFB' },
   { name: 'Vue.js', icon: FaVuejs, color: '#4FC08D' },
   { name: 'Figma', icon: FaFigma, color: '#F24E1E' }, 
+  { name: 'Vite', icon: SiVite, color: '#646CFF' }, 
 ];
 
 const backendSkills = [
@@ -42,18 +45,18 @@ const Skills = () => {
             >
               Habilidades
             </motion.h2>
-
             <h3 className="text-3xl font-orbitron font-bold mb-8 text-center text-space-purple">
               Frontend
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 mb-16"> {/* <-- ATUALIZADO PARA 8 COLUNAS */}
               {frontendSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
                   className="flex flex-col items-center p-4 bg-space-blue/30 backdrop-blur-sm rounded-lg"
                   initial={{ opacity: 0, y: 50 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }} 
+                  
                   whileHover={{ 
                     scale: 1.1, 
                     rotateY: 15, 
@@ -65,11 +68,10 @@ const Skills = () => {
                 </motion.div>
               ))}
             </div>
-
             <h3 className="text-3xl font-orbitron font-bold mb-8 text-center text-green-500">
               Backend
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8"> {/* <-- ATUALIZADO PARA 8 COLUNAS */}
               {backendSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -77,6 +79,7 @@ const Skills = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.5, delay: (frontendSkills.length + index) * 0.1 }}
+                  
                   whileHover={{ 
                     scale: 1.1, 
                     rotateY: 15, 

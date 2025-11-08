@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'; 
 
-const loadingPhrase = "ESTÁS PREPARADO PARA ESSA IMERSÃO CÓSMICA?";
+const loadingPhrase = "ESTA PREPARADO PARA ESSA IMERSÃO CÓSMICA?";
 
 interface CosmicLoaderProps {
   onLoadComplete: () => void;
